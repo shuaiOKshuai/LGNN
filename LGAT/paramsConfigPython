@@ -1,0 +1,50 @@
+[param]
+
+###############################################################
+# settings of dataset and GPUs
+###############################################################
+
+# root dir of datasets  
+root_dir = ../dataset/
+
+# dataset name
+dataset = cora
+
+# gpu id
+gpu = 0
+
+###############################################################
+# parameters settings in experiments
+###############################################################
+
+# dimension of the inner layer (output of the first layer)
+hid_units = 8
+
+# learning rate
+lr = 0.005
+
+# lambda_G: l2 for GNNs parameters (lambda_G in the paper)
+lambda_G = 0.0005
+
+# labmda_L: l2 for FiLM parameters (labmda_L in the paper)
+labmda_L = 1.0
+
+# lambda_l2: l2 for FiLM factors (labmda in the paper)
+lambda_l2 = 0.1
+
+# dropout rate (remove, keep = 1-dropout)
+# for Citeseer, dropout = 0.7; for others, dropout = 0.6
+dropout = 0.6
+
+# the number of epoch to start to record the results
+start_record_epoch = 200
+
+# max number of epoch
+train_max_epoch_num = 100000
+
+# patience
+patience = 200
+
+# the batch size for test (only for save the memory)
+test_batch_size = 100
+

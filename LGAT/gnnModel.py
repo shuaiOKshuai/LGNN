@@ -16,11 +16,11 @@ def build_model(options, features_tensor, adj_2_tensor, mask_2_tensor, mask_2_te
     model_loss = tf.reduce_mean(model_loss) 
     model_acc = tf.reduce_mean(model_acc)
     
-    model_loss += tf.add_n([tf.nn.l2_loss(v) for v in gat_variables]) * options['l2_coef']
+    model_loss += tf.add_n([tf.nn.l2_loss(v) for v in gat_variables]) * options['lambda_G']
     
-    model_loss += tf.add_n([tf.nn.l2_loss(v) for v in film_variables]) * options['film_l2_coef']
-    model_loss += tf.add_n([tf.reduce_mean((v-1.0) ** 2) for v in gammas]) * options['gamma_l2_coef']
-    model_loss += tf.add_n([tf.reduce_mean(v ** 2) for v in betas]) * options['beta_l2_coef']
+    model_loss += tf.add_n([tf.nn.l2_loss(v) for v in film_variables]) * options['labmda_L']
+    model_loss += tf.add_n([tf.reduce_mean((v-1.0) ** 2) for v in gammas]) * options['lambda_l2']
+    model_loss += tf.add_n([tf.reduce_mean(v ** 2) for v in betas]) * options['lambda_l2']
     
     optimizer = tf.train.AdamOptimizer(options['lr'], name='train_update_op')
     train_update_op = optimizer.minimize(model_loss)
