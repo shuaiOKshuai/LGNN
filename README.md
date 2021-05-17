@@ -20,7 +20,7 @@ Node-wise Localization of Graph Neural Networks
 	
 2. Requirements (Environment)
 	python-3.6.5
-	tensorflow-1.13
+	tensorflow-1.13.1
 
 3. How to run
 	(1) First configure the parameters in file paramsConfigPython
