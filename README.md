@@ -2,7 +2,7 @@
 
 # Node-wise Localization of Graph Neural Networks
 
-We present the datasets and code for our paper "Node-wise Localization of Graph Neural Networks", which is published in IJCAI-2021.
+We present the datasets and code for our paper "Node-wise Localization of Graph Neural Networks" (LGNN for short), which is published in IJCAI-2021.
 
 
 ## 1. Description for each file
