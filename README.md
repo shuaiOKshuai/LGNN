@@ -9,9 +9,7 @@ We present the datasets and code for our paper "Node-wise Localization of Graph 
 
 	Folders:
 		- dataset_process_tools : the tools to process datasets of Amazon and Chameleon
-		- LGCN : source codes of LGCN, which is based on GCN.
-		- LGAT : source codes of LGAT, which is based on GAT.
-		- LGIN : source codes of LGIN, which is based on GIN.
+		- model : the models, including LGCN (based on GCN), LGAT (based on GAT) and LGIN (based on GIN).
 		- dataset : the datasets
 	
 	Inside files in each LGNN folder:
