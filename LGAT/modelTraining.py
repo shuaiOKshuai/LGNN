@@ -100,21 +100,30 @@ def modelTraining(
         y_val_only = y_val[val_node_ids]
         y_test_only = y_test[test_node_ids]
         
-        train_adj_2, train_mask_2, train_mask_2_nor, train_adj_1, train_mask_1, train_mask_1_nor = processTools.prepareDataset_bigdata(nodes_num, max_degree_self, train_node_ids, neis, neis_mask, neis_mask_nor)
+        if dataset in {"citeseer"}: 
+            train_adj_2, train_mask_2, train_mask_2_nor, train_adj_1, train_mask_1, train_mask_1_nor = processTools.prepareDataset(nodes_num, max_degree_self, train_node_ids, neis, neis_mask, neis_mask_nor)
+        else:
+            train_adj_2, train_mask_2, train_mask_2_nor, train_adj_1, train_mask_1, train_mask_1_nor = processTools.prepareDataset_bigdata(nodes_num, max_degree_self, train_node_ids, neis, neis_mask, neis_mask_nor)
         val_batches = processTools.get_minibatches_idx(val_node_ids.shape[0], test_batch_size)
         test_batches = processTools.get_minibatches_idx(test_node_ids.shape[0], test_batch_size)
         val_dataset = []
         for _, batch in val_batches:
             batch_array = np.array(batch) 
             val_node_ids_batch = val_node_ids[batch_array] 
-            val_batch_adj_2, val_batch_mask_2, val_batch_mask_2_nor, val_batch_adj_1, val_batch_mask_1, val_batch_mask_1_nor = processTools.prepareDataset_bigdata(nodes_num, max_degree_self, val_node_ids_batch, neis, neis_mask, neis_mask_nor)
+            if dataset in {"citeseer"}: 
+                val_batch_adj_2, val_batch_mask_2, val_batch_mask_2_nor, val_batch_adj_1, val_batch_mask_1, val_batch_mask_1_nor = processTools.prepareDataset(nodes_num, max_degree_self, val_node_ids_batch, neis, neis_mask, neis_mask_nor)
+            else:
+                val_batch_adj_2, val_batch_mask_2, val_batch_mask_2_nor, val_batch_adj_1, val_batch_mask_1, val_batch_mask_1_nor = processTools.prepareDataset_bigdata(nodes_num, max_degree_self, val_node_ids_batch, neis, neis_mask, neis_mask_nor)
             val_tuple = (val_batch_adj_2, val_batch_mask_2, val_batch_mask_2_nor, val_batch_adj_1, val_batch_mask_1, val_batch_mask_1_nor, y_val_only[batch_array])
             val_dataset.append(val_tuple)
         test_dataset = []
         for _, batch in test_batches:
             batch_array = np.array(batch) 
             test_node_ids_batch = test_node_ids[batch_array] 
-            test_batch_adj_2, test_batch_mask_2, test_batch_mask_2_nor, test_batch_adj_1, test_batch_mask_1, test_batch_mask_1_nor = processTools.prepareDataset_bigdata(nodes_num, max_degree_self, test_node_ids_batch, neis, neis_mask, neis_mask_nor)
+            if dataset in {"citeseer"}: 
+                test_batch_adj_2, test_batch_mask_2, test_batch_mask_2_nor, test_batch_adj_1, test_batch_mask_1, test_batch_mask_1_nor = processTools.prepareDataset(nodes_num, max_degree_self, test_node_ids_batch, neis, neis_mask, neis_mask_nor)
+            else:
+                test_batch_adj_2, test_batch_mask_2, test_batch_mask_2_nor, test_batch_adj_1, test_batch_mask_1, test_batch_mask_1_nor = processTools.prepareDataset_bigdata(nodes_num, max_degree_self, test_node_ids_batch, neis, neis_mask, neis_mask_nor)
             test_tuple = (test_batch_adj_2, test_batch_mask_2, test_batch_mask_2_nor, test_batch_adj_1, test_batch_mask_1, test_batch_mask_1_nor, y_test_only[batch_array])
             test_dataset.append(test_tuple)
             
@@ -200,9 +209,9 @@ def modelTraining(
         
         print('----------------------------------------------------------------------------------')
         print('Train early stop epoch == ', epoch_early_stop)
-        print('End pretrian Discriminator, Test acc == ', test_acc_value)
-        print('End pretrian Discriminator, ', 'mi-f1 == ', test_micro_f1)
-        print('End pretrian Discriminator, ', 'ma-f1 == ', test_macro_f1)
+        print('Test acc == ', test_acc_value)
+        print('Test mi-f1 == ', test_micro_f1)
+        print('Test ma-f1 == ', test_macro_f1)
         print('----------------------------------------------------------------------------------')
         
     return test_acc_value, test_micro_f1, test_macro_f1

@@ -193,9 +193,9 @@ def modelTraining(
         
         print('----------------------------------------------------------------------------------')
         print('Train early stop epoch == ', epoch_early_stop)
-        print('End pretrian Discriminator, Test acc == ', test_acc_value)
-        print('End pretrian Discriminator, ', 'mi-f1 == ', test_micro_f1)
-        print('End pretrian Discriminator, ', 'ma-f1 == ', test_macro_f1)
+        print('Test acc == ', test_acc_value)
+        print('Test mi-f1 == ', test_micro_f1)
+        print('Test ma-f1 == ', test_macro_f1)
         print('----------------------------------------------------------------------------------')
         
     
