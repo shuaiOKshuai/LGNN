@@ -1,4 +1,3 @@
-# LGNN
 
 # Node-wise Localization of Graph Neural Networks
 
@@ -28,10 +27,10 @@ We present the datasets and code for our paper "Node-wise Localization of Graph 
 
 ## 3. How to run
 
-- (1) First configure the parameters in file paramsConfigPython
-- (2) Run 'python3 mainEntry.py' 
+- (1) First configure the parameters in file "paramsConfigPython"
+- (2) Run "python3 mainEntry.py"
 	
-	remark : Command 'python3 mainEntry.py' would call the train, validation and test together, and finally output the prediction results on the test. There is no need to pretrain the model.
+	remark : Command "python3 mainEntry.py" would call the train, validation and test together, and finally output the prediction results on the test. There is no need to pretrain the model.
 
 ## 4. Datasets
 
