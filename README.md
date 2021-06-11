@@ -8,7 +8,6 @@ We present the datasets and code for our paper "Node-wise Localization of Graph 
 ## 1. Description for each file
 
 	Folders:
-		- dataset_process_tools : the tools to process datasets of Amazon and Chameleon
 		- model : the models, including LGCN (based on GCN), LGAT (based on GAT) and LGIN (based on GIN).
 		- dataset : the datasets
 	
@@ -18,6 +17,8 @@ We present the datasets and code for our paper "Node-wise Localization of Graph 
 		- modelTraining.py : the training file 
 		- gnnModel.py : the LGNN model
 		- processTools.py : file that contains some tool functions
+	
+	LGNN_IJCAI_21_Appendix: the appendix file of the paper
 	
 ## 2. Requirements (Environment)
 
