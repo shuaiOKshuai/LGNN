@@ -18,7 +18,7 @@ We present the datasets and code for our paper "Node-wise Localization of Graph 
 		- gnnModel.py : the LGNN model
 		- processTools.py : file that contains some tool functions
 	
-	LGNN_IJCAI_21_Appendix: the appendix file of the paper
+	LGNN_IJCAI_21_Appendix.pdf: the appendix file of the paper
 	
 ## 2. Requirements (Environment)
 
