@@ -47,10 +47,16 @@ Note that, for your own dataset, when running the code the dataset would be spli
 
 
 ## 5. Cite
+	
 	@inproceedings{liu2021nodewise,
-		title = {Node-wise Localization of Graph Neural Networks},
-		author = {Liu, Zemin and Fang, Yuan and Liu, Chenghao and Hoi, Steven CH},
-		booktitle = {Proceedings of the Thirtieth International Joint Conference on Artificial Intelligence (IJCAI-21)},
-		year = {2021}
+	  title     = {Node-wise Localization of Graph Neural Networks},
+	  author    = {Liu, Zemin and Fang, Yuan and Liu, Chenghao and Hoi, Steven C.H.},
+	  booktitle = {Proceedings of the Thirtieth International Joint Conference on
+		       Artificial Intelligence, {IJCAI-21}},
+	  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+	  pages     = {1520--1526},
+	  year      = {2021},
+	  note      = {Main Track}
 	}
+
 			
